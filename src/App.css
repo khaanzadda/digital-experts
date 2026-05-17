@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global polish */
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+/* Selection */
+::selection {
+  background: rgba(239, 68, 68, 0.35);
+}
