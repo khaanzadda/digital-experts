@@ -5,12 +5,26 @@ import { clsx, fadeInUp, stagger, formatCurrencyPKR } from "./utils.jsx";
 // WhatsApp setup
 const whatsappNumber = "923345938162";
 
-const getWhatsAppLink = (planName) => {
-  const message = `Hi, I want to discuss ${planName} package.`;
+const getWhatsAppLink = (plan, title) => {
+  const message = `
+Hi Digital Experts,
+
+I'm interested in ${title} — ${plan.name} Package.
+
+Package Details:
+• Price: ${plan.price}
+• Features:
+${plan.features.map(f => `- ${f}`).join("\n")}
+
+Please share more details.
+
+Thank you.
+`;
+
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 };
 
-function PricingCard({ plan, recommended }) {
+function PricingCard({ plan, recommended, serviceTitle }) {
   return (
     <motion.div
       variants={fadeInUp}
@@ -74,7 +88,7 @@ function PricingCard({ plan, recommended }) {
       {/* WHATSAPP ICON BUTTON */}
       <div className="mt-4 flex justify-center">
         <a
-          href={getWhatsAppLink(plan.name)}
+          href={getWhatsAppLink(plan, serviceTitle)}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-red-500 text-white hover:bg-red-600 transition shadow-lg"
@@ -88,9 +102,10 @@ function PricingCard({ plan, recommended }) {
 
 export default function PricingCards({
   title = "Pricing packages",
-  subtitle,
-  plans,
-  recommendedName,
+  subtitle = "",
+  plans = [],
+  recommendedName = "",
+  serviceTitle = "",
 }) {
   return (
     <section className="bg-slate-950 py-20 sm:py-24">

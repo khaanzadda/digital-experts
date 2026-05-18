@@ -117,6 +117,7 @@ export default function SaaSDev() {
         subtitle="Starting points for MVP and SaaS product delivery."
         plans={plans}
         recommendedName="Standard"
+        serviceTitle="SaaS Product Development"
       />
 
       <CTA />
