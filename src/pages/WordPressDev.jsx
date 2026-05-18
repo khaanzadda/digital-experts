@@ -111,6 +111,7 @@ export default function WordPressDev() {
         subtitle="Starting points for WordPress and WooCommerce builds."
         plans={plans}
         recommendedName="Standard"
+
       />
 
       <CTA />

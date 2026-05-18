@@ -7,9 +7,7 @@ const whatsappNumber = "923345938162";
 
 const getWhatsAppLink = (plan, title) => {
   const message = `
-Hi Digital Experts,
-
-I'm interested in ${title} — ${plan.name} Package.
+Hi Digital Experts, I'm interested in ${title} — ${plan.name} Package.
 
 Package Details:
 • Price: ${plan.price}
@@ -132,6 +130,7 @@ export default function PricingCards({
               <PricingCard
                 key={p.name}
                 plan={p}
+                serviceTitle={serviceTitle}
                 recommended={
                   recommendedName
                     ? p.name === recommendedName
