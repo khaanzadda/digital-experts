@@ -77,7 +77,7 @@ function PricingCard({ plan, recommended }) {
           href={getWhatsAppLink(plan.name)}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-white hover:bg-green-600 transition shadow-lg"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-red-500 text-white hover:bg-red-600 transition shadow-lg"
         >
           <MessageCircle className="h-5 w-5" />
         </a>
